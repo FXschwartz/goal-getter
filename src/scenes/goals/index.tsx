@@ -3,7 +3,7 @@ import { SafeAreaView, Text, TouchableHighlight, View, FlatList } from 'react-na
 
 import { ListItem, Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { Picker } from '@react-native-community/picker';
+import { PickerIOS } from '@react-native-community/picker';
 
 const filterOptions: Array<string> = [
   'All',
@@ -41,25 +41,25 @@ function filterPicker() {
   const [selectedFilter, setFilter] = useState('primary');
 
   return (
-
+    <SafeAreaView>
     <View>
       <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
         <Button
           title='Add Goal'
           type='clear'
         />
-        <Picker
+        <PickerIOS
           selectedValue={selectedFilter}
           style={{ height: 50, width: 120 }}
-          onValueChange={(itemValue) => {
+          onValueChange={(itemValue:any) => {
             setFilter(itemValue);
           }}>
-          <Picker.Item label="All" value="all" />
-          <Picker.Item label="Primary" value="primary" />
-          <Picker.Item label="Career" value="career" />
-          <Picker.Item label="Family" value="family" />
-          <Picker.Item label="Wealth" value="wealth" />
-        </Picker>
+          <PickerIOS.Item label="All" value="all" />
+          <PickerIOS.Item label="Primary" value="primary" />
+          <PickerIOS.Item label="Career" value="career" />
+          <PickerIOS.Item label="Family" value="family" />
+          <PickerIOS.Item label="Wealth" value="wealth" />
+        </PickerIOS>
       </View>
 
       {
@@ -76,6 +76,7 @@ function filterPicker() {
         ))
       }
     </View>
+    </SafeAreaView>
   );
 }
 
