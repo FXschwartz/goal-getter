@@ -1,8 +1,8 @@
 import React from 'react';
 import { SafeAreaView, Text, TouchableHighlight, View, FlatList } from 'react-native';
 
-import { ListItem, Button } from 'react-native-elements'
-import Icon from 'react-native-vector-icons/FontAwesome';
+import { ListItem, Button } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 
 const list = [
@@ -21,29 +21,43 @@ const list = [
     avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
     // subtitle: 'Vice Chairman'
   },
-]
+];
 
-const GoalsScreen = ({navigation}:any) => (
+const GoalsScreen = ({ navigation }: any) => (
 
-<View>
-  <Button
-    title="Add Goal"
-    type="clear"
-  />
-  {
-    
-    list.map((l, i) => (
-      <ListItem
-        key={i}
-        // leftAvatar={{ source: { uri: l.avatar_url } }}
-        leftIcon={{name: 'camera-alt'}}
-        title={l.name}
-        // subtitle={l.subtitle}
-        bottomDivider
+  <View>
+    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+      <Button
+        title='Add Goal'
+        type='clear'
       />
-    ))
-  }
-</View>
+      <Button
+        icon={
+          <Icon
+            name='filter-list'
+            size={25}
+            color='grey'
+          />
+        }
+        type='clear'
+      // title="Button with icon component"
+      />
+    </View>
+
+    {
+
+      list.map((l, i) => (
+        <ListItem
+          key={i}
+          // leftAvatar={{ source: { uri: l.avatar_url } }}
+          leftIcon={{ name: 'camera-alt' }}
+          title={l.name}
+          // subtitle={l.subtitle}
+          bottomDivider
+        />
+      ))
+    }
+  </View>
 );
 
 // const GoalsScreen = ({navigation}:any) => (
