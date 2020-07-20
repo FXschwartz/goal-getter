@@ -1,14 +1,45 @@
 import React from 'react';
 import { SafeAreaView, Text, TouchableHighlight } from 'react-native';
 
-const GratitudeScreen = ({navigation}:any) => (
-  <SafeAreaView>
-    <Text>Screen: Gratitude</Text>
+import { ButtonGroup } from 'react-native-elements';
 
-    <TouchableHighlight onPress={() => navigation.navigate('Login')}>
-      <Text>Go to Login</Text>
-    </TouchableHighlight>
-  </SafeAreaView>
-);
+export class Gratitude extends React.Component<{}, { selectedIndex: number; }> {
 
-export default GratitudeScreen;
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      selectedIndex: 1
+    };
+    this.updateIndex = this.updateIndex.bind(this);
+  }
+
+  updateIndex(selectedIndex: number) {
+    this.setState({ selectedIndex });
+  }
+
+  render() {
+    const buttons = ['Calendar', 'Daily'];
+    const { selectedIndex } = this.state;
+
+    return (
+      <ButtonGroup
+        onPress={this.updateIndex}
+        selectedIndex={selectedIndex}
+        buttons={buttons}
+        containerStyle={{ height: 30 }}
+      />
+    );
+  }
+}
+
+// const GratitudeScreen = ({navigation}:any) => (
+//   <SafeAreaView>
+//     <Text>Screen: Gratitude</Text>
+
+//     <TouchableHighlight onPress={() => navigation.navigate('Login')}>
+//       <Text>Go to Login</Text>
+//     </TouchableHighlight>
+//   </SafeAreaView>
+// );
+
+// export default GratitudeScreen;

@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-import { Icon } from 'react-native-elements'
+import { Icon } from 'react-native-elements';
 
-import GratitudeScreen from '_scenes/gratitude';
+import { Gratitude } from '_scenes/gratitude';
 import GoalsScreen from '_scenes/goals';
 import AccountScreen from '_scenes/account';
 
@@ -14,30 +14,30 @@ const TabNavigatorConfig = {
 };
 
 const RouteConfigs = {
-  Gratitude:{
-    screen:GratitudeScreen,
+  Gratitude: {
+    screen: Gratitude,
     navigationOptions: {
-      tabBarLabel: 'Gratitude', 
-      tabBarIcon: ({ tintColor }:any) => (
-        <Icon name="insert-emoticon" size={20}/>
+      tabBarLabel: 'Gratitude',
+      tabBarIcon: ({ tintColor }: any) => (
+        <Icon name="insert-emoticon" size={20} />
       )
     }
   },
-  Goals:{
-    screen:GoalsScreen,
+  Goals: {
+    screen: GoalsScreen,
     navigationOptions: {
-      tabBarLabel: 'Goals', 
-      tabBarIcon: ({ tintColor }:any) => (
-        <Icon name="playlist-add-check" size={20}/>
+      tabBarLabel: 'Goals',
+      tabBarIcon: ({ tintColor }: any) => (
+        <Icon name="playlist-add-check" size={20} />
       )
     }
   },
-  Account:{
-    screen:AccountScreen,
+  Account: {
+    screen: AccountScreen,
     navigationOptions: {
-      tabBarLabel: 'Account', 
-      tabBarIcon: ({ tintColor }:any) => (
-        <Icon name="settings" size={20}/>
+      tabBarLabel: 'Account',
+      tabBarIcon: ({ tintColor }: any) => (
+        <Icon name="settings" size={20} />
       )
     }
   }
