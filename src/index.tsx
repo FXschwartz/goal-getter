@@ -1,8 +1,8 @@
 import React from 'react';
 import { View,Text } from 'react-native';
 
-import Navigator from '_navigations';
-import AppHeader from '_components/organisms/header';
+import Navigator from './navigations/index';
+import AppHeader from './components/organisms/header';
 
 const App = () => {
     return (

@@ -1,6 +1,6 @@
 import { createStackNavigator } from 'react-navigation-stack';
 
-import LoginScreen from '_scenes/login';
+import LoginScreen from '../scenes/login';
 
 const AuthNavigatorConfig = {
   initialRouteName: 'Login',

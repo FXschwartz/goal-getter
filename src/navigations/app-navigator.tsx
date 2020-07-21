@@ -3,9 +3,9 @@ import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { Icon } from 'react-native-elements';
 
-import { Gratitude } from '_scenes/gratitude';
-import GoalsScreen from '_scenes/goals';
-import AccountScreen from '_scenes/account';
+import { Gratitude } from '../scenes/gratitude';
+import GoalsScreen from '../scenes/goals';
+import AccountScreen from '../scenes/account';
 
 const TabNavigatorConfig = {
   initialRouteName: 'Gratitude',
