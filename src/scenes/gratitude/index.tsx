@@ -40,6 +40,7 @@ export class Gratitude extends React.Component<{}, { selectedIndex: number; cale
             selectedIndex={selectedIndex}
             buttons={buttons}
             containerStyle={{ height: 30 }}
+            selectedButtonStyle={{ backgroundColor: '#4d089a' }}
           />
           <View>
             <Calendar
@@ -63,12 +64,48 @@ export class Gratitude extends React.Component<{}, { selectedIndex: number; cale
             selectedIndex={selectedIndex}
             buttons={buttons}
             containerStyle={{ height: 30 }}
+            selectedButtonStyle={{ backgroundColor: '#4d089a' }}
+
           />
           <View>
+
             <Input
               placeholder='Add Daily GRATITUDE'
             />
-            <Input
+            <ListItem
+              // leftAvatar={{ source: { uri: l.avatar_url } }}
+              title='I am thankful for the opportunity to create.'
+              // subtitle={l.subtitle}
+              bottomDivider
+              checkmark={{ color: '#4d089a' }}
+            />
+            <ListItem
+              // leftAvatar={{ source: { uri: l.avatar_url } }}
+              title='I am thankful for the opportunity to breathe.'
+              // subtitle={l.subtitle}
+              bottomDivider
+              checkmark={{ color: '#4d089a' }}
+            />
+            <ListItem
+              // leftAvatar={{ source: { uri: l.avatar_url } }}
+              title='I am thankful for the opportunity to be me.'
+              // subtitle={l.subtitle}
+              bottomDivider
+            />
+            <ListItem
+              // leftAvatar={{ source: { uri: l.avatar_url } }}
+              title='I am thankful for the opportunity to serve.'
+              // subtitle={l.subtitle}
+              checkmark={{ color: '#4d089a' }}
+              bottomDivider
+            />
+            <ListItem
+              // leftAvatar={{ source: { uri: l.avatar_url } }}
+              title='I am thankful for the opportunity to learn.'
+              // subtitle={l.subtitle}
+              bottomDivider
+            />
+            {/* <Input
               value='I am thankful for the opportunity to create.'
             />
             <Input
@@ -82,7 +119,7 @@ export class Gratitude extends React.Component<{}, { selectedIndex: number; cale
             />
             <Input
               value='I am thankful for the opportunity to learn.'
-            />
+            /> */}
           </View>
         </View>
       );

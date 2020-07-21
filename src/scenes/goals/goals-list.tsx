@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
-import { SafeAreaView, Text, TouchableHighlight, View, FlatList } from 'react-native';
+import React, { useState, PureComponent } from 'react';
+import { Navigation } from 'react-native-navigation';
+import PropTypes from 'prop-types';
 
-import { ListItem, Button, Card, Image, Avatar } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-import { PickerIOS, Picker } from '@react-native-community/picker';
+import { SafeAreaView, View, Text } from 'react-native';
+
+import { ListItem, Button, Card } from 'react-native-elements';
+// import Icon from 'react-native-vector-icons/MaterialIcons';
+// import { PickerIOS, Picker } from '@react-native-community/picker';
 
 const filterOptions: Array<string> = [
   'All',
@@ -37,18 +40,51 @@ const list = [
 //   console.log('selectedFilter: %o', selectedFilter);
 // }
 
-function filterPicker() {
-  const [selectedFilter, setFilter] = useState('primary');
+class GoalsList extends PureComponent {
 
-  return (
-    <SafeAreaView>
-      <View>
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-          <Button
-            title='Add Goal'
-            type='clear'
-          />
-          {/* <Picker
+  static propTypes = {
+    navigator: PropTypes.object,
+    componentId: PropTypes.string
+  };
+
+  constructor(props: any) {
+    super(props);
+    this.openGoal = this.openGoal.bind(this);
+  }
+
+  openGoal() {
+    Navigation.push(this.props.componentId, {
+      component: {
+        name: 'Goals Detail',
+        options: {
+          topBar: {
+            title: {
+              text: 'Goal Detail',
+              color: 'white',
+              alignment: 'center'
+            },
+            background: {
+              color: '#4d089a'
+            }
+          }
+        }
+      }
+    });
+  };
+
+  render() {
+    // const [selectedFilter, setFilter] = useState('primary');
+
+    return (
+      <SafeAreaView>
+        <View>
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+            <Button
+              title='Add Goal'
+              type='clear'
+              titleStyle={{ color: '#4d089a' }}
+            />
+            {/* <Picker
             selectedValue={selectedFilter}
             style={{ height: 50, width: 120 }}
             onValueChange={(itemValue: any) => {
@@ -60,86 +96,25 @@ function filterPicker() {
             <Picker.Item label="Family" value="family" />
             <Picker.Item label="Wealth" value="wealth" />
           </Picker> */}
+          </View>
+
+          {
+
+            list.map((u, i) => (
+              <Card key={i} containerStyle={{ padding: 0 }}>
+                {
+                  <ListItem
+                    onPress={() => this.openGoal()}
+                    title={u.name}
+                    leftAvatar={{ source: { uri: u.avatar_url }, rounded: true }}
+                  />
+                }
+              </Card>
+            ))
+          }
         </View>
-
-        {
-
-          list.map((u, i) => (
-            <Card key={i} containerStyle={{ padding: 0 }}>
-              {
-                // list.map((u, i) => {
-                // return (
-                <ListItem
-                  onPress={() => console.log('listItem Pressed')}
-                  title={u.name}
-                  leftAvatar={{ source: { uri: u.avatar_url }, rounded: true }}
-                />
-                // );
-                // })
-              }
-            </Card>
-            // <ListItem
-            //   key={i}
-            //   // leftAvatar={{ source: { uri: l.avatar_url } }}
-            //   leftIcon={{ name: 'camera-alt' }}
-            //   title={l.name}
-            //   // subtitle={l.subtitle}
-            //   bottomDivider
-            // />
-          ))
-        }
-      </View>
-    </SafeAreaView>
-  );
+      </SafeAreaView>
+    );
+  }
 }
-
-
-// const GoalsScreen = ({ navigation }: any) => (
-
-//   <View>
-//     <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-//       <Button
-//         title='Add Goal'
-//         type='clear'
-//       />
-//       <Picker
-//         selectedValue={selectedFilter}
-//         style={{ height: 50, width: 100 }}
-//         onValueChange={(itemValue, itemIndex) =>
-//           setFilter(selectedFilter)
-//         }>
-//         <Picker.Item label="All" value="all" />
-//         <Picker.Item label="Primary" value="primary" />
-//         <Picker.Item label="Career" value="career" />
-//         <Picker.Item label="Family" value="family" />
-//         <Picker.Item label="Wealth" value="wealth" />
-//       </Picker>
-//       {/* <Button
-//         icon={
-//           <Icon
-//             name='filter-list'
-//             size={25}
-//             color='grey'
-//           />
-//         }
-//         type='clear'
-//       /> */}
-//     </View>
-
-//     {
-
-//       list.map((l, i) => (
-//         <ListItem
-//           key={i}
-//           // leftAvatar={{ source: { uri: l.avatar_url } }}
-//           leftIcon={{ name: 'camera-alt' }}
-//           title={l.name}
-//           // subtitle={l.subtitle}
-//           bottomDivider
-//         />
-//       ))
-//     }
-//   </View>
-// );
-
-export default filterPicker;
+export default GoalsList;

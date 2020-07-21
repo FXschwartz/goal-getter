@@ -12,14 +12,13 @@ const AccountScreen = ({ navigation }: any) => (
         size="xlarge"
         rounded
         source={{
-          uri:
-            'https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png',
+          uri: '../../images/icons/default-profile-image.png',
         }}
-        title="MD"
+        title="PS"
         // showAccessory
         onPress={() => console.log("Works!")}
         // activeOpacity={0.7}
-        containerStyle={{ marginTop: 90 }}
+        containerStyle={{ marginTop: 90, marginBottom: 25 }}
       />
     </View>
 

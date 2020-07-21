@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { Icon } from 'react-native-elements';
 
 import { Gratitude } from '../scenes/gratitude';
-import GoalsScreen from '../scenes/goals';
+import GoalsScreen from '../scenes/goals/goals-list';
 import AccountScreen from '../scenes/account';
 
 const TabNavigatorConfig = {
