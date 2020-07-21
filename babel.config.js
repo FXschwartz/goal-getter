@@ -2,7 +2,6 @@ module.exports = {
   presets: ['module:metro-react-native-babel-preset'],
   plugins: [
     [
-      "transform-remove-console",
       'module-resolver',
       {
         cwd: 'babelrc',
@@ -21,6 +20,7 @@ module.exports = {
           _utils: './src/utils'
         }
       }
-    ]
+    ],
+    "transform-remove-console",
   ]
 };

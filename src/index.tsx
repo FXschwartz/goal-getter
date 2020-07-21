@@ -1,5 +1,5 @@
 import React from 'react';
-import { View,Text } from 'react-native';
+import { View, Text } from 'react-native';
 
 import Navigator from './navigations/index';
 import AppHeader from './components/organisms/header';
@@ -7,9 +7,9 @@ import AppHeader from './components/organisms/header';
 const App = () => {
     return (
         <>
-            <AppHeader />
-            <Navigator />
+            {/* <AppHeader />
+            <Navigator /> */}
         </>
     );
-}
+};
 export default App;
