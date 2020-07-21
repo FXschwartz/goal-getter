@@ -10,7 +10,7 @@ import AccountScreen from '../scenes/account';
 const TabNavigatorConfig = {
   initialRouteName: 'Gratitude',
   header: null,
-  headerMode: 'none',
+  headerMode: 'none'
 };
 
 const RouteConfigs = {

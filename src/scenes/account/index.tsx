@@ -13,16 +13,19 @@ const AccountScreen = ({ navigation }: any) => (
         rounded
         source={{
           uri:
-            'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+            'https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png',
         }}
+        title="MD"
+        // showAccessory
         onPress={() => console.log("Works!")}
-        activeOpacity={0.7}
-        containerStyle={{ marginTop: 115, marginBottom: 75 }}
+        // activeOpacity={0.7}
+        containerStyle={{ marginTop: 90 }}
       />
     </View>
 
     <Input
       value='Preston Schwartz'
+      label='Full Name'
       leftIcon={
         <Icon
           name='user'
@@ -33,6 +36,7 @@ const AccountScreen = ({ navigation }: any) => (
     />
     <Input
       value='test@test.com'
+      label='Email Address'
       leftIcon={
         <Icon
           name='envelope'
@@ -43,6 +47,7 @@ const AccountScreen = ({ navigation }: any) => (
     />
     <Input
       value='555-555-5555'
+      label='Phone Number'
       leftIcon={
         <Icon
           name='phone'

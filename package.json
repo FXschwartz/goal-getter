@@ -13,7 +13,8 @@
     "@react-native-community/picker": "^1.6.5",
     "react": "16.13.1",
     "react-native": "0.63.0",
-    "react-native-calendars": "^1.300.0"
+    "react-native-calendars": "^1.300.0",
+    "react-native-navigation": "^6.9.1"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
@@ -27,6 +28,7 @@
     "@typescript-eslint/parser": "^2.27.0",
     "babel-jest": "^25.1.0",
     "babel-plugin-module-resolver": "^4.0.0",
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "eslint": "^6.5.1",
     "eslint-import-resolver-babel-module": "^5.1.2",
     "jest": "^25.1.0",
