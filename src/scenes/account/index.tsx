@@ -12,7 +12,7 @@ const AccountScreen = ({ navigation }: any) => (
         size="xlarge"
         rounded
         source={{
-          uri: '../../images/icons/default-profile-image.png',
+          // uri: '../../images/icons/default-profile-image.png',
         }}
         title="PS"
         // showAccessory
